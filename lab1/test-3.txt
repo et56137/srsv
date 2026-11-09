@@ -1,0 +1,5 @@
+#id	prio	first	T	C	D
+#D < T < C
+#ako se program zaustavi na dva cijelo tri sekunde, onda ispisuje jednog neispravnog i cetiri zahtjeva, a to je u redu jer
+#se losi zahtjevi broje tek kad zavrse
+inp-1	1	20	750	1000	500
