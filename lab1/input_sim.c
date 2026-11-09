@@ -207,7 +207,7 @@ int main(int argc, char** argv)
 		}
 
 		pthread_mutex_unlock(&ii->lock);
-		msleep(10);
+		msleep(1);
 		pthread_mutex_lock(&ii->lock);
 	}
 	pthread_mutex_unlock(&ii->lock);
