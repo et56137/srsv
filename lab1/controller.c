@@ -100,9 +100,9 @@ int main(int argc, char** argv)
 				pause = end;
 				TIMESPEC_ADD_MS(end, inputs[i].C);
 
-				/* Wait 10ms, check updated information, if fail, stop running */
+				/* Wait 1ms, check updated information, if fail, stop running */
 				do{
-					TIMESPEC_ADD_MS(pause, 10);
+					TIMESPEC_ADD_MS(pause, 1);
 					PRINTF("Doing %d %s, req: %d\n", i, inputs[i].name, s->request);
 					for (int k=0; k<nr_inputs; k++){
 						if(prev_requests[k] != (&ii->input[k])->request){
@@ -125,7 +125,7 @@ int main(int argc, char** argv)
 
 		if (inputs_handled == 0 && ii->simulation_stop == 0) { //if no requests, sleep 1 msec
 			pthread_mutex_unlock(&ii->lock);
-			msleep(10);
+			msleep(1);
 			pthread_mutex_lock(&ii->lock);
 		}
 	}
